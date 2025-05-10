@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-blue-500: hsl(215, 51%, 70%);
+  --primary-cyan-400: hsl(178, 100%, 50%);
+  --blue-950: hsl(217, 54%, 11%);
+  --blue-900: hsl(216, 50%, 16%);
+  --blue-800: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--blue-950);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.card {
+  background-color: var(--blue-900);
+  border-radius: 15px;
+  width: 350px;
+  padding: 24px;
+}
+
+.img_container {
+  position: relative;
+  cursor: pointer;
+  width: 302px;
+  height: 302px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.overlay {
+  inset: 0;
+  position: absolute;
+  background-color: var(--primary-cyan-400);
+  background-image: url("./images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.overlay:hover {
+  opacity: 0.6;
+}
+
+.img_container img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: fill;
+}
+
+.msg_container h1 {
+  font-size: 22px;
+  color: var(--white);
+  margin-top: 24px;
+}
+
+.msg_container h1:hover {
+  color: var(--primary-cyan-400);
+}
+
+.msg_container p {
+  margin-top: 24px;
+  color: var(--primary-blue-500);
+}
+
+.asset_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+.price {
+  color: var(--primary-cyan-400);
+}
+
+.price > img {
+  margin-right: 6px;
+}
+
+.time {
+  color: var(--primary-blue-500);
+}
+
+.time > img {
+  margin-right: 6px;
+}
+
+hr {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border: 1px solid var(--blue-800);
+}
+
+.author_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.image-avatar {
+  width: 33px;
+  height: 33px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.author {
+  color: var(--white);
+}
+
+.author:hover {
+  color: var(--primary-cyan-400);
+}
+
+.author > span {
+  color: var(--primary-blue-500);
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 640px) {
+  .card {
+    width: 327px;
+  }
+  .img_container {
+    width: 278px;
+    height: 278px;
+  }
+}
